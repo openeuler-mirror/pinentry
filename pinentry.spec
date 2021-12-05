@@ -1,6 +1,6 @@
 Name:           pinentry
-Version:        1.1.0
-Release:        5
+Version:        1.1.1
+Release:        1
 Summary:        A new module that contains various interfaces to enter a PIN/passphrase.
 
 License:        GPLv2+
@@ -90,5 +90,8 @@ fi
 %doc ChangeLog NEWS TODO
 
 %changelog
+* Wed Dec 1 2021 zoulin <zoulin13@huawei.com> - 1.1.1-1
+- update version to 1.1.1
+
 * Tue Sep 17 2019 openEuler Buildteam <buildteam@openeuler.org> - 1.1.0-5
 - Package Init
