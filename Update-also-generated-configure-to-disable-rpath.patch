@@ -1,0 +1,27 @@
+From 8031753da4bed81fd133dceff8187f0e86e02f3f Mon Sep 17 00:00:00 2001
+From: Jakub Jelen <jjelen@redhat.com>
+Date: Fri, 16 Apr 2021 09:13:43 +0200
+Subject: [PATCH] Update also generated configure to disable rpath
+
+as we do not run autogen.sh to regenerate configure, it is still needed
+---
+ configure | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/configure b/configure
+index d3b6f42..9d3607e 100755
+--- a/configure
++++ b/configure
+@@ -10765,7 +10765,9 @@ fi
+ 
+     qtlibdir=`"$PKG_CONFIG" --variable libdir Qt5Core`
+     if test -n "$qtlibdir"; then
++      if test "$enable_rpath" != "no"; then
+         PINENTRY_QT_LDFLAGS="$PINENTRY_QT_LDFLAGS -Wl,-rpath \"$qtlibdir\""
++      fi
+     fi
+ 
+     if test -n "$ac_tool_prefix"; then
+-- 
+1.8.3.1
+
