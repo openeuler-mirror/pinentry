@@ -1,6 +1,6 @@
 Name:           pinentry
 Version:        1.1.1
-Release:        1
+Release:        2
 Summary:        A new module that contains various interfaces to enter a PIN/passphrase.
 
 License:        GPLv2+
@@ -10,6 +10,8 @@ Source0:        https://www.gnupg.org/ftp/gcrypt/pinentry/%{name}-%{version}.tar
 # source1 is from opensuse
 Source1:        pinentry-wrapper
 Source2:        https://www.gnupg.org/ftp/gcrypt/pinentry/%{name}-%{version}.tar.bz2.sig
+
+Patch1:         Update-also-generated-configure-to-disable-rpath.patch
 
 BuildRequires:  pkgconfig(Qt5Widgets) libcap-devel ncurses-devel libassuan-devel
 BuildRequires:  libgpg-error-devel libsecret-devel pkgconfig(Qt5Core) gcc
@@ -90,6 +92,9 @@ fi
 %doc ChangeLog NEWS TODO
 
 %changelog
+* Mon Mar 7 2022 zoulin <zoulin13@h-partners.com> - 1.1.1-2
+- remove rpath
+
 * Wed Dec 1 2021 zoulin <zoulin13@huawei.com> - 1.1.1-1
 - update version to 1.1.1
 
